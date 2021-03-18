@@ -1,0 +1,66 @@
+#aboutPage{
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--main-color) url("../images/background2.jpg")  no-repeat 0%;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    padding: 3% 0;
+    overflow-y: scroll;
+}
+
+#aboutPage::-webkit-scrollbar{
+    display: none;
+}
+#aboutPage{
+    scrollbar-width: none;
+}
+
+.faq-header h3{
+    color: #FFF;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.65rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.card{
+    position: relative;
+    border-bottom: 1px solid #FFF;
+    width: 500px;
+    padding: 20px 30px;
+    color: #FFF;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+.quest{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.quest.collapsed{
+    border-bottom: 1px solid #FFF;
+    padding: 10px 0;
+}
+.card:first-child{
+    border-top: 1px solid #FFF;
+}
+.card-text{
+    display: block;
+    padding-top: 10px;
+    position: relative;
+    font-size: 1.1rem;
+}
+.card-text.hidden{
+    display: none;
+}
+
+@media screen and (max-width: 550px){
+    .card{
+        width: 300px;
+    }
+}

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/home.css" />
+    <link rel="stylesheet" href="./css/about.css" />
+    <link rel="stylesheet" href="./css/contact.css" />
+    <link rel="stylesheet" href="node_modules/flag-icon-css/css/flag-icon.css">
+    <title>COVID Stats</title>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <i class="fas fa-syringe fa-2x"></i>
+        <h1>COVID Stats</h1>
+      </div>
+      <nav>
+        <ul class="links" id="links">
+          <li class="link active"><a href="#homePage">Home</a></li>
+          <li class="link"><a href="#aboutPage">About</a></li>
+          <li class="link"><a href="#contactPage">Contact</a></li>
+        </ul>
+        <button class="ham" id="ham">
+          <i class="fa fa-bars fa-2x"></i>
+        </button>
+      </nav>
+    </header>
+
+    <main class="container">
+      <div class="page" id="homePage">
+        <div class="hero-start" id="hero-start">
+          <div class="virus-image">
+            <img src="./images/virus.svg" alt="virus-image" />
+          </div>
+
+          <div class="hero-text">
+            <h2>COVID-19</h2>
+            <h3>Statistics</h3>
+          </div>
+          <div class="warning-boxes">
+            <div class="warning-text">
+              <h4>How virus spread:</h4>
+            </div>
+            <div class="spread s1">
+              <img src="./images/cough.svg" alt="cough" />
+              <div class="spread-text">
+                <h5>Cough</h5>
+                <p>From infected person who cough or sneeze</p>
+              </div>
+            </div>
+            <div class="spread s2">
+              <img src="./images/closedistance.svg" alt="close distance" />
+              <div class="spread-text">
+                <h5>Close distance</h5>
+                <p>High risk of infection close to a infected person</p>
+              </div>
+            </div>
+            <div class="spread s3">
+              <img src="./images/closeobject.svg" alt="close object" />
+              <div class="spread-text">
+                <h5>Thouching object</h5>
+                <p>Thouching an object that already has the virus</p>
+              </div>
+            </div>
+            <div class="spread s4">
+              <img src="./images/public.svg" alt="cough" />
+              <div class="spread-text">
+                <h5>Public places</h5>
+                <p>
+                  Higher risk of infection in public places with lots of people
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="home-content">
+          <form class="form" action="">
+            <label class="fsort" for="fsort"
+              >Choose a category and an area to see stats:</label
+            >
+            <div class="inputs">
+              <select id="fsort" name="fsort" required>
+                <option value="">Sort by...</option>
+                <option value="population">Population</option>
+                <option value="cases">Cases</option>
+                <option value="tests">Tests</option>
+                <option value="rate">Case fatality rate</option>
+              </select>
+              <p>and</p>
+              <select id="fchoices" name="fchoices" required>
+                <option value="">Choose area...</option>
+                <option value="world">World</option>
+                <option value="europe">Europe</option>
+                <option value="northamerica">North America</option>
+                <option value="southamerica">South America</option>
+                <option value="asia">Asia</option>
+                <option value="africa">Africa</option>
+              </select>
+              <button id="filterBtn" class="filterBtn" type="button">
+                Check
+              </button>
+            </div>
+          </form>
+          <div class="dynamic-content">
+            <div class="dynamic-list">
+              <ul class="result-list" id="result-list">
+                
+              </ul>
+            </div>
+            <div class="dynamic-chart">
+              <div class="cases-data">
+                <div class="country-details" id="country-details">
+                </div>
+                <div class="country-stats" id="country-stats">
+                </div>
+              </div>
+              <div class="chart-data">
+                <canvas class="chart" id="myChart"></canvas>
+              </div>
+            </div>
+          </div>
+          <div class="warning-message" id="warningmessage" hidden>
+            <span>You must choose a category and an area!</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="page" id="aboutPage" hidden>
+        <div class="faq">
+          <div class="faq-header">
+            <h3>What about this virus?</h3>
+          </div>
+          <div class="questions">
+            <div class="card">
+              <div class="quest">
+                <span>What is COVID-19?</span>
+                <i class="fas fa-plus"></i>
+              </div>
+              <div class="card-text hidden">
+                <p>
+                  COVID-19 is a new disease, caused by a novel (or new)
+                  coronavirus that has not previously been seen in humans.
+                  <br />Because it is a new virus, scientists are learning more
+                  each day. Although most people who have COVID-19 have mild
+                  symptoms, COVID-19 can also cause severe illness and even
+                  death. <br />Some groups, including older adults and people
+                  who have certain underlying medical conditions, are at
+                  increased risk of severe illness.
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <div class="quest">
+                <span>How does this virus spread?</span>
+                <i class="fas fa-plus"></i>
+              </div>
+              <div class="card-text hidden">
+                <p>
+                  COVID-19 is thought to spread mainly through close contact
+                  from person to person, including between people who are
+                  physically near each other (within about 6 feet). <br />How
+                  easily a virus spreads from person to person can vary.
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <div class="quest">
+                <span>What are the symptoms of COVID-19?</span>
+                <i class="fas fa-plus"></i>
+              </div>
+              <div class="card-text hidden">
+                <p>
+                  Symptoms may appear 2-14 days after exposure to the virus.
+                  <br />If you have fever, cough, or other symptoms, you might
+                  have COVID-19.
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <div class="quest">
+                <span>Is handwashing enough to kill the virus?</span>
+                <i class="fas fa-plus"></i>
+              </div>
+              <div class="card-text hidden">
+                <p>
+                  Handwashing is one of the best ways to protect yourself and
+                  your family from getting sick. <br />Wash your hands often
+                  with soap and water for at least 20 seconds, especially after
+                  blowing your nose, coughing, or sneezing.
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <div class="quest">
+                <span>How long does protection from vaccine last?</span>
+                <i class="fas fa-plus"></i>
+              </div>
+              <div class="card-text hidden">
+                <p>
+                  We don’t know how long protection lasts for those who are
+                  vaccinated.<br />Experts are working to learn more about both
+                  natural immunity and vaccine-induced immunity.
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <div class="quest">
+                <span>Are any common side effects of vaccine?</span>
+                <i class="fas fa-plus"></i>
+              </div>
+              <div class="card-text hidden">
+                <p>
+                  After getting vaccinated, you may have some side effects,
+                  which are normal signs that your body is building
+                  protection.<br />The most common side effects are pain and
+                  swelling in the arm where you received the shot. In addition,
+                  you may have fever, chills, tiredness, and headache.
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <div class="quest">
+                <span>How do we protect against COVID-19?</span>
+                <i class="fas fa-plus"></i>
+              </div>
+              <div class="card-text hidden">
+                <p>
+                  1. Get Vaccinated.
+                  <br />
+                  2. Wear a mask.
+                  <br />
+                  3. Stay 6 feet away from others.
+                  <br />
+                  4. Avoid crowds and poorly ventilated spaces.
+                  <br />
+                  5. Wash you hands often.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="page" id="contactPage" hidden>
+        <h2 class="touch">Get in touch.</h2>
+        <div class="present-text">
+          <h4 class="who">Who am I?</h4>
+          <p class="me">
+            My name is Iosif Tudor Andrei. <br />I'm a student in third year,
+            majoring in Automation and Applied Informatics at Technical
+            University of Cluj Napoca. <br />I have a deep passion for
+            developing web and mobile application, building nice things that can
+            help other people and make our lives easier and funnier. <br />Also,
+            I'm intrested in cyber security, system controlling and automotive
+            industry development.
+          </p>
+        </div>
+        <div class="contact-links">
+          <div class="contact mail">
+            <i class="fas fa-envelope icons"></i>
+            <span>tudor_iosif@yahoo.com</span>
+          </div>
+
+          <div class="contact git">
+            <i class="fab fa-github icons"></i>
+            <span><a href="https://github.com/tudoriosif">tudoriosif</a></span>
+          </div>
+
+          <div class="contact phone">
+            <i class="fas fa-phone-square icons"></i>
+            <span>+40744592933</span>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="copyright-footer">
+      <p>Copyright &#169; Tudor Iosif</p>
+    </footer>
+
+    <script type='text/javascript' src='./js/config.js'></script>
+    <script
+      defer
+      src="node_modules/@fortawesome/fontawesome-free/js/all.js"
+    ></script>
+    <script defer src="node_modules/chart.js/dist/Chart.bundle.js"></script>
+    <script src="./js/about.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

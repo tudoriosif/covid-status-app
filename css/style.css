@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --main-color: rgb(103, 53, 126);
+    --text-color: rgb(1, 110, 134);
+
+    outline: none;
+}
+
+[hidden]{
+    display: none !important;
+}
+
+/* Header */
+header{
+    z-index: 2;
+    color: var(--main-color);
+    display: flex;
+    font-family: 'Raleway', sans-serif;
+    padding: 25px 10% 15px 10%;
+    justify-content: space-between;
+    align-items: center;
+}
+nav{
+    width: 30%;
+}
+.links{
+    display: flex;
+    justify-content: space-between;
+}
+.link,.link a{
+    text-decoration: none;
+    list-style: none;
+    color: var(--main-color);
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+.logo {
+    display: flex;
+    font-size: 0.85rem;
+    margin-top: -5px;
+}
+.ham{
+    display: none;
+    flex-direction: column;
+    border: none;
+    color: var(--main-color);
+    background: transparent;
+    cursor: pointer;
+}
+
+.link.active{
+    border-bottom: 3px solid var(--main-color);
+}
+
+@media screen and (max-width: 850px){
+    nav{
+        width: 10%;
+    }
+    .ham{
+        position: relative;
+        display: flex;
+        z-index: 5;
+    }
+    .links.toggle{
+        transform: scale(1);
+    }
+    .links{
+        z-index: 1;
+        position: fixed;
+        top: 0%; right: 2%;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 100vh;
+        text-align: center;
+        transform: scale(0);
+        transition: all 1s ease-out;
+    }
+    .links a{
+        color: var(--text-color);
+    }
+}
+
+/* Footer */
+.copyright-footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    font-family: 'Raleway', sans-serif;
+    color: var(--main-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

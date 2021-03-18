@@ -1,0 +1,93 @@
+#contactPage{
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+#contactPage::-webkit-scrollbar{
+    display: none;
+}
+#contactPage{
+    scrollbar-width: none;
+}
+
+
+.touch{
+    padding-top: 7.5vh;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-size: 2rem;
+    color: var(--main-color);
+}
+
+.present-text{
+    width: 50%;
+    margin: 30px auto 0px auto;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--main-color);
+}
+
+.who{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.25rem;
+    color: var(--main-color);
+}
+
+.me{
+    font-family: 'Lato', sans-serif;
+    font-size: 1.1rem;
+    color: #555555;
+}
+
+.contact-links{
+    padding-top: 50px ;
+    width: 50%;
+    font-family: 'Lato', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    color: #555555;
+}
+.contact{
+    display: flex;
+    flex-direction: column;
+}
+
+.icons{
+    font-size: 60px;
+    margin: 0 auto;
+    color: var(--main-color);
+}
+
+a{
+    text-decoration: none;
+    color: #555555;
+}
+
+@media screen and (max-width: 770px){
+    .contact-links{
+        flex-direction: column;
+    }
+    .contact{
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 30px;
+        text-align: center;
+    }
+    .icons{
+        font-size: 30px;
+    }
+    .me{
+        font-size: 1rem;
+    }
+    .who{
+        font-size: 1.1rem;
+    }
+    .touch{
+        padding-top: 3vh;
+    }
+
+}

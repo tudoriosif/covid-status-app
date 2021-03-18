@@ -1,0 +1,333 @@
+/* Main */
+.container{
+    z-index: -1;
+    width: 100vw;
+    height: calc(100vh - 40px - 67px);
+}
+/* Home Page */
+#homePage{
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    /* background: rgb(81,0,116) url("../images/background.jpg") no-repeat 0%;
+    background-size: cover; */
+}
+
+/* Home Start */
+.hero-start{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    font-family: 'Roboto', sans-serif !important;
+    color: var(--text-color);
+    z-index: 3;
+}
+
+.hero-text{
+    position: absolute;
+    text-align: left;
+    right: 25%;
+    top: 40%;
+}
+.hero-text h2{
+    color: rgb(180, 97, 216);
+    font-size: 4rem;
+    text-shadow: 1px 2px 1px rgb(5, 5, 5);
+}
+.hero-text h3{
+    margin-top: -10px;
+    padding-left: 5px;
+}
+.virus-image{
+    position: absolute;
+    width: max(275px,23vw);
+    top: 10%;
+    right: 10%;
+    opacity: 1;
+    animation: 20s infinite alternate rotateImage;
+}
+
+@keyframes rotateImage{
+    from{
+        transform: rotate(0);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+.warning-boxes{
+    position: absolute;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.25rem;
+    word-spacing: 3px;
+    top: 30%;
+    left: 10%;
+    display: grid;
+    grid-template-columns: minmax(300px,21vw) minmax(300px,21vw);
+    grid-template-rows: 20px minmax(75px,7vw) minmax(75px,7vw);
+    row-gap: 20px;
+    column-gap: 20px;
+}
+.warning-text{
+    grid-column: 1 / 3;
+}
+
+.spread{
+    display: flex;
+    align-items: center;
+}
+.spread-text{
+    width: auto;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    text-align: center;
+    margin: 5%;
+}
+.spread-text h5{
+    font-size: 1rem;
+}
+.spread-text p{
+    font-size: 0.85rem;
+}
+.spread img{
+    max-height: 100%;
+}
+
+.warning-message{
+    width: 250px;
+    background-color: rgb(226, 67, 67);
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 25px;
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    font-size: .85rem;
+}
+
+
+/* Home after */
+
+.home-content{
+    position: relative;
+    z-index: 3;
+    width: 100%; height: 100%;
+    font-family: 'Raleway', sans-serif;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Selection form */
+.form{
+    padding: 2% 0 0 10%;
+    font-size: 1.2rem;
+    color: var(--text-color);
+    z-index: 900;
+}
+.inputs{
+    display: flex;
+    align-items: center;
+    font-size: 0.85rem;
+}
+select{
+    overflow: hidden;
+    margin: 10px 20px;
+    background-color: var(--text-color);
+    border: none;
+    border-radius: 10px;
+    padding:2.5px 10px;
+    color: #FFF;
+    font-size: 0.85rem;
+    min-width: 200px;
+    max-width: 250px;
+    box-shadow: 0px 1px 10px 1px rgba(0,0,0,0.2);
+}
+
+.filterBtn{
+    border: none;
+    background-color: rgb(109, 55, 133);
+    color: #FFF;
+    padding: 5px 25px;
+    border-radius: 25px;
+    margin-left: 20px;
+    box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+/* Dynamic page */
+.dynamic-content{
+    width: 100%;
+    flex-grow: 1;
+    padding: 1% 5% 1% 10%;
+    overflow: hidden;
+    display: flex;
+}
+.dynamic-list{
+    overflow-y: scroll;
+    scrollbar-width: none;
+    width: 100%;
+}
+.dynamic-list::-webkit-scrollbar{
+    display: none;
+}
+.dynamic-list{
+    width: 50%;
+    height: 100%;
+}
+.dynamic-chart{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Result list */
+.result-list{
+    width: 100%;
+    list-style-type: none;
+    padding: 2% 0 2% 10%;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+.result-list::-webkit-scrollbar{
+    display: none;
+}
+.result-link a{
+    text-decoration: none;
+    color: var(--text-color);
+    font-family: 'Lato', sans-serif;
+    font-size: 1.1rem;
+    width: 40%;
+}
+.result-link{
+    width: 80%;
+    border-radius: 2px;
+    padding: 10px;
+    border-top: 1px solid rgba(99, 99, 99, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all .2s ease-in-out;
+}
+.result-link:last-child{
+    border-bottom: 1px solid rgba(99, 99, 99, 0.3);
+}
+.result-link:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+.see-stats{
+    font-size: 0.7rem;
+    font-style: italic;
+    color: rgb(8, 151, 39);
+    background-color: rgba(98, 243, 130, 0.61);
+    padding: 5px 10px;
+    border-radius: 25px;
+}
+
+/* Chart */
+.cases-data{
+    width: 100%;
+    padding-bottom: 10%;
+}
+.country-details,.country-stats,.cases-data{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: var(--text-color);
+}
+.country-name{
+    font-size: 1.5rem;
+    padding-left: 15px;
+}
+.country-stats{
+    font-size: 1.25rem;
+    padding: 0 5%;
+    width: 75%;
+}
+.chart-data{
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+}
+.chart{
+    width: 100%;
+}
+/* Responsiveness */
+@media screen and (max-width: 1050px){
+    .warning-boxes{
+        grid-template-columns: minmax(300px,21vw);
+        grid-template-rows: 20px repeat(4,minmax(75px,7vw));
+    }
+    .warning-text{
+        grid-column: 1/2;
+    }
+    .country-stats{
+        font-size: 1rem;
+    }
+    .country-name{
+        font-size: 1.25rem;
+    }
+}
+@media screen and (max-width: 700px){
+    .inputs{
+        flex-direction: column;
+    }
+    .virus-image{
+        display: none;
+    }
+    .hero-text{
+        display: none;
+    }
+    .warning-message{
+        top: 35%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .dynamic-content{
+        flex-direction: column;
+        height: 200vh;
+    }
+    .dynamic-list,.dynamic-chart{
+        width: 100%;
+    }
+    .dynamic-chart{
+        padding-top: 20px;
+    }
+    .result-link a{
+        font-size: 0.85rem;
+    }
+    .see-stats{
+        font-size: 0.5rem;
+        padding: 3px 5px;
+    }
+    .cases-data{
+        flex-direction: column;
+    }
+    .country-details,.country-stats{
+        width: 100%;
+        justify-content: center;
+    }
+}
+@media screen and (max-width: 1300px){
+    .virus-image{
+        width: 250px;
+        top: 25%;
+        right: 10%;
+    }
+    .hero-text{
+        right: 20%;
+        top: 45%;
+    }
+    .hero-text h2{
+        font-size: 3rem;
+    }
+}
+
+
