@@ -330,4 +330,11 @@ select{
     }
 }
 
-
+@media screen and (max-height: 680px){
+    .warning-boxes{
+        top: 40%;
+        font-size: 1rem;
+        grid-template-columns: minmax(300px,21vw);
+        grid-template-rows: 15px repeat(4,minmax(45px,4vw));
+    }
+}
