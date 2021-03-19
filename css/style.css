@@ -79,9 +79,13 @@ nav{
         text-align: center;
         transform: scale(0);
         transition: all 1s ease-out;
+        background-color: rgba(103, 53, 126,0.7);
     }
     .links a{
-        color: var(--text-color);
+        color: rgb(45, 193, 226);
+    }
+    .link.active{
+        border-bottom: 3px solid rgb(45, 193, 226);
     }
 }
 
